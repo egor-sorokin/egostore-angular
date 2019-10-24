@@ -7,6 +7,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ResultsComponent } from './results/results.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -14,12 +16,13 @@ import { ResultsComponent } from './results/results.component';
     NavBarComponent,
     SidebarComponent,
     SearchBarComponent,
-    NavBarComponent,
-    ResultsComponent
+    ResultsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
