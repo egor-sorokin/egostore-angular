@@ -1,1 +1,16 @@
-<p>results works!</p>
+<mat-grid-list cols="3" rowHeight="400px">
+  <mat-grid-tile class="tile" *ngFor="let result of getResults()">
+    <article class="tile__inner">
+      <div class="tile__image" [ngStyle]="{'background-image': 'url(' + result.src + ')'}"></div>
+      <h3>{{result.title}}</h3>
+      <p>{{result.description}}</p>
+      <p><em>Buy now just for: ${{result.price}}</em></p>
+    </article>
+    <div class="tile__footer">
+      <button mat-raised-button
+              color="primary"
+              (click)="onAddToCart(result)"
+      >Add to Cart</button>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
