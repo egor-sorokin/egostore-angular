@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class ContentComponent implements OnInit {
   options = {
     bottom: 0,
-    fixed: true,
-    top: 64
+    fixed: false,
+    top: 164
   };
 
   constructor() {}

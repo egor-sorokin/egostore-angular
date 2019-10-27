@@ -1,15 +1,20 @@
-<mat-sidenav-container class="content-container">
-  <mat-sidenav class="sidebar-container"
-               mode="side"
-               opened
-               [fixedInViewport]="options.fixed"
-               [fixedTopGap]="options.top"
-               [fixedBottomGap]="options.bottom"
-  >
-    <app-sidebar></app-sidebar>
-  </mat-sidenav>
-  <mat-sidenav-content>
+<div class="page-container">
+  <div class="search-container">
     <app-search-bar></app-search-bar>
-    <app-results></app-results>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </div>
+
+  <mat-sidenav-container class="content-container">
+    <mat-sidenav class="sidebar-container"
+                 mode="side"
+                 opened
+                 [fixedInViewport]="options.fixed"
+                 [fixedTopGap]="options.top"
+                 [fixedBottomGap]="options.bottom"
+    >
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-results></app-results>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
