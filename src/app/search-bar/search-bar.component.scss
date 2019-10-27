@@ -1,11 +1,15 @@
-.search-form {
-  margin: 0 auto;
+.search {
+  &__form {
+    margin: 0 auto;
 
-  width: 100%;
-  max-width: 650px;
-  min-width: 250px;
+    width: 100%;
+    max-width: 650px;
+    min-width: 250px;
+  }
 }
 
-.search-field {
-  width: 100%;
+.form {
+  &__field {
+    width: 100%;
+  }
 }

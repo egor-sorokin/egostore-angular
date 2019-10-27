@@ -10,7 +10,7 @@ export class ContentComponent implements OnInit {
   options = {
     bottom: 0,
     fixed: false,
-    top: 164
+    top: 184
   };
 
   constructor() {}

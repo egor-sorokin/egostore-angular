@@ -1,0 +1,25 @@
+.tile {
+  &__inner {
+    box-sizing: border-box;
+    align-self: flex-start;
+
+    height: 100%;
+
+    padding: 30px 30px 65px;
+  }
+
+  &__image {
+    height: 150px;
+    width: auto;
+
+    background-color: rgba(127, 255, 212, 0.6);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 15px;
+  }
+}
