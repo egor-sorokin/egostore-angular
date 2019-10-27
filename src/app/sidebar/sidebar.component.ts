@@ -10,7 +10,7 @@ import { IKeyToValue } from '../../common/types/generic';
 })
 
 export class SidebarComponent implements OnInit {
-  public prices: IKeyToValue<number | string>[] = [
+  private prices: IKeyToValue<number | string>[] = [
     {
       label: '100',
       value: 100
@@ -29,7 +29,7 @@ export class SidebarComponent implements OnInit {
     }
   ];
 
-  public categories: IKeyToValue<string>[] = [
+  private categories: IKeyToValue<string>[] = [
     {
       label: 'Clothes',
       value: 'clothes'
@@ -55,4 +55,11 @@ export class SidebarComponent implements OnInit {
     console.log('filterByCategory:::', value);
   }
 
+  public getPrices() {
+    return this.prices;
+  }
+
+  public getCategories() {
+    return this.categories;
+  }
 }
