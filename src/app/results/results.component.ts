@@ -13,7 +13,7 @@ export class ResultsComponent implements OnInit {
       alt: '',
       category: 'food',
       price: 120,
-      title: 'product 0',
+      title: 'Healthy food set',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
         ' Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
     },
@@ -23,7 +23,7 @@ export class ResultsComponent implements OnInit {
       alt: '',
       category: 'clothes',
       price: 250,
-      title: 'product 1',
+      title: 'Jacket',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
         ' Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
     },
@@ -33,7 +33,7 @@ export class ResultsComponent implements OnInit {
       alt: '',
       category: 'food',
       price: 20,
-      title: 'product 2',
+      title: 'Cake',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     {
@@ -42,7 +42,7 @@ export class ResultsComponent implements OnInit {
       alt: '',
       category: 'food',
       price: 411,
-      title: 'product 3',
+      title: 'Cookies',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
         ' Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
     },
@@ -52,7 +52,7 @@ export class ResultsComponent implements OnInit {
       alt: '',
       category: 'clothes',
       price: 99,
-      title: 'product 4',
+      title: 'Bowtie',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
         ' Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
     },
@@ -62,7 +62,7 @@ export class ResultsComponent implements OnInit {
       alt: '',
       category: 'clothes',
       price: 205,
-      title: 'product 5',
+      title: 'Sweater',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
         ' Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
     },
@@ -72,7 +72,7 @@ export class ResultsComponent implements OnInit {
       alt: '',
       category: 'food',
       price: 8,
-      title: 'product 6',
+      title: '1kg Blueberry',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
     },
     {
@@ -81,7 +81,7 @@ export class ResultsComponent implements OnInit {
       alt: '',
       category: 'food',
       price: 53,
-      title: 'product 7',
+      title: 'Pancakes',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
         ' Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
     },
@@ -91,7 +91,7 @@ export class ResultsComponent implements OnInit {
       alt: '',
       category: 'clothes',
       price: 372,
-      title: 'product 8',
+      title: 'Skirt',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
         ' Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
     },
@@ -101,7 +101,7 @@ export class ResultsComponent implements OnInit {
       alt: '',
       category: 'clothes',
       price: 89,
-      title: 'product 9',
+      title: 'Shirt',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
         ' Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
     },
@@ -111,7 +111,7 @@ export class ResultsComponent implements OnInit {
       alt: '',
       category: 'food',
       price: 13,
-      title: 'product 10',
+      title: 'Strawberries',
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' +
         ' Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
     }
