@@ -21,5 +21,8 @@
   &__footer {
     position: absolute;
     bottom: 15px;
+    right: 50%;
+
+    transform: translateX(50%);
   }
 }
