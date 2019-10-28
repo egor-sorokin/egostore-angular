@@ -1,0 +1,14 @@
+[
+  {
+    "type": "Express",
+    "price": 20.99
+  },
+  {
+    "type": "2-Day express",
+    "price": 12.29
+  },
+  {
+    "type": "Standard",
+    "price": 1.59
+  }
+]

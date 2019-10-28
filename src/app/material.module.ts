@@ -8,7 +8,8 @@ import {
   MatInputModule,
   MatSelectModule,
   MatGridListModule,
-  MatListModule
+  MatListModule,
+  MatRadioModule
 } from '@angular/material';
 
 @NgModule({
@@ -20,7 +21,8 @@ import {
     MatInputModule,
     MatSelectModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    MatRadioModule
   ],
   exports: [
     MatToolbarModule,
@@ -30,7 +32,8 @@ import {
     MatInputModule,
     MatSelectModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    MatRadioModule
   ]
 })
 
