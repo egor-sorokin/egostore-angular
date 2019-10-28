@@ -1,0 +1,18 @@
+<mat-grid-list cols="3" rowHeight="450px">
+  <mat-grid-tile class="tile" *ngFor="let product of products | async">
+    <div class="tile__inner">
+      <article class="tile__content">
+        <div class="tile__image" [ngStyle]="{'background-image': 'url(' + product.src + ')'}"></div>
+        <h3>{{product.title}}</h3>
+        <p>{{product.description}}</p>
+        <p><em>Buy now just for: ${{product.price}}</em></p>
+      </article>
+      <div class="tile__footer">
+        <button mat-raised-button
+                color="primary"
+                (click)="onAddToCart(product)"
+        >Add to Cart</button>
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
