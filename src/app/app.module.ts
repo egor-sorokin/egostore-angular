@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { CartComponent } from './cart/cart.component';
 import { ContentComponent } from './content/content.component';
+import { ShippingComponent } from './shipping/shipping.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ContentComponent } from './content/content.component';
     SearchBarComponent,
     ProductsComponent,
     CartComponent,
-    ContentComponent
+    ContentComponent,
+    ShippingComponent
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,7 @@
         <div class="tile__image" [ngStyle]="{'background-image': 'url(' + product.src + ')'}"></div>
         <h3>{{product.title}}</h3>
         <p>{{product.description}}</p>
-        <p><em>Buy now just for: ${{product.price}}</em></p>
+        <p><em>Buy now just for: {{product.price | currency}}</em></p>
       </article>
       <div class="tile__footer">
         <button mat-raised-button
