@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CartService } from '../../common/services/cart.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { CartService } from '../../common/services/cart.service';
 })
 export class ShippingComponent implements OnInit {
   public shippingPrices;
+  @Output() changeShipping: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private cartService: CartService
@@ -17,4 +18,7 @@ export class ShippingComponent implements OnInit {
     this.shippingPrices = this.cartService.getShippingPrices();
   }
 
+  onChangeShipping(price) {
+    this.changeShipping.emit(price);
+  }
 }

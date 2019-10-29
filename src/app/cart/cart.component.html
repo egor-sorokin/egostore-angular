@@ -1,17 +1,41 @@
 <div class="cart-container">
-  <h2>Your order</h2>
+  <h2>Your cart</h2>
 
-  <mat-list>
-    <mat-list-item *ngFor="let item of items">
-      <div class="order__image"
-           matListAvatar
-           [ngStyle]="{'background-image': 'url(' + item.src + ')'}"></div>
-      <h4 matLine>{{ item.title }}</h4>
-      <p matLine>{{ item.description }}</p>
-      <p class="order__price">{{ item.price | currency }}</p>
-      <mat-divider></mat-divider>
-    </mat-list-item>
-  </mat-list>
+  <div *ngIf="items.length">
+    <mat-list>
+      <mat-list-item *ngFor="let item of items">
+        <div class="order__image"
+             matListAvatar
+             [ngStyle]="{'background-image': 'url(' + item.src + ')'}"></div>
+        <h4 matLine>{{ item.title }}</h4>
+        <p matLine>{{ item.description }}</p>
+        <p class="order__price">{{ item.price | currency }}</p>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
 
-  <app-shipping></app-shipping>
+    <app-shipping
+      (changeShipping)="changeShipping($event)"
+    ></app-shipping>
+    <p class="order__total">Total: {{getTotal() | currency}}</p>
+
+    <footer class="order__actions">
+      <button mat-raised-button
+              color="warn"
+              (click)="cleanCart()"
+      >Clean cart</button>
+      <button mat-raised-button
+              color="primary"
+              [disabled]="shippingPrice === 0"
+      >Proceed</button>
+    </footer>
+  </div>
+  <div *ngIf="!items.length"
+       class="order__empty">
+    <p>You have not added something to your cart yet.</p>
+    <button [routerLink]="['/']"
+            mat-raised-button
+            color="primary"
+    >Back to the store</button>
+  </div>
 </div>

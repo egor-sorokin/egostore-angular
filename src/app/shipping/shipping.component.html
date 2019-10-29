@@ -8,8 +8,9 @@
       class="shipping__option"
       *ngFor="let shipping of shippingPrices | async"
       [value]="shipping.price"
+      (change)="onChangeShipping($event.value)"
     >
-      {{shipping.type}}
+      {{shipping.type}} <em>({{shipping.price | currency}})</em>
     </mat-radio-button>
   </mat-radio-group>
 </div>

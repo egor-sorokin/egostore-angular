@@ -20,4 +20,25 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  &__total {
+    text-align: right;
+  }
+
+  &__actions {
+    margin-top: 50px;
+
+    text-align: right;
+
+    button:nth-of-type(n+2) {
+      margin-left: 10px;
+    }
+  }
+
+  &__empty {
+    margin: 0 auto;
+    width: 500px;
+
+    text-align: center;
+  }
 }
