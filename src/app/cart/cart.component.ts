@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../common/services/cart.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
@@ -8,25 +9,36 @@ import { CartService } from '../../common/services/cart.service';
 })
 export class CartComponent implements OnInit {
   items;
-  shippingPrice = 0;
+  shippingPrices;
+  checkoutForm: FormGroup;
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private builder: FormBuilder
   ) { }
 
   ngOnInit() {
     this.items = this.cartService.getItems();
+    this.shippingPrices = this.cartService.getShippingPrices();
+
+    this.checkoutForm = this.builder.group({
+      shipping: ['', Validators.required],
+      name: ['', Validators.required],
+      address: ['', Validators.required]
+    });
   }
 
   getTotal() {
-    return this.shippingPrice + this.items.reduce((a, b) => a + b.price, 0);
+    return this.checkoutForm.value.shipping + this.items.reduce((a, b) => a + b.price, 0);
   }
 
   cleanCart() {
     this.items = this.cartService.clearCart();
   }
 
-  changeShipping(price) {
-    this.shippingPrice = price;
+  proceed() {
+    this.items = this.cartService.clearCart();
+    this.checkoutForm.reset();
+    window.alert('Your order has been submitted');
   }
 }
