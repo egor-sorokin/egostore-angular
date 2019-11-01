@@ -6,6 +6,22 @@
   min-width: 300px;
 }
 
+.cart {
+  &--empty {
+    margin: 0 auto;
+    width: 500px;
+
+    text-align: center;
+  }
+
+  &__delete-order {
+    margin-top: 25px;
+    margin-bottom: 40px;
+
+    text-align: right;
+  }
+}
+
 .order {
   &__price {
     margin-left: 40px;
@@ -20,9 +36,11 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
 
+.summary {
   &__total {
-    text-align: right;
+    margin-top: 40px;
   }
 
   &__actions {
@@ -35,10 +53,16 @@
     }
   }
 
-  &__empty {
-    margin: 0 auto;
-    width: 500px;
+}
 
-    text-align: center;
+.shipping {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 10px;
+  padding-bottom: 20px;
+
+  &__option:nth-of-type(n+2) {
+    margin-top: 10px;
   }
 }

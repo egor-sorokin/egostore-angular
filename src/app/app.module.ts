@@ -14,7 +14,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { CartComponent } from './cart/cart.component';
 import { ContentComponent } from './content/content.component';
-import { ShippingComponent } from './shipping/shipping.component';
 
 
 @NgModule({
@@ -25,8 +24,7 @@ import { ShippingComponent } from './shipping/shipping.component';
     SearchBarComponent,
     ProductsComponent,
     CartComponent,
-    ContentComponent,
-    ShippingComponent
+    ContentComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +33,7 @@ import { ShippingComponent } from './shipping/shipping.component';
     BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', component: ContentComponent },
-      { path: 'cart', component: CartComponent },
+      { path: 'cart', component: CartComponent }
     ]),
     FormsModule,
     MaterialModule,
