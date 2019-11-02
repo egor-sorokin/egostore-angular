@@ -24,5 +24,9 @@
     right: 50%;
 
     transform: translateX(50%);
+
+    button:nth-of-type(n+2) {
+      margin-left: 10px;
+    }
   }
 }
