@@ -1,7 +1,7 @@
-<div class="page-container">
-  <div class="search-container">
+<section class="page-container">
+  <section class="search-container">
     <app-search-bar></app-search-bar>
-  </div>
+  </section>
 
   <mat-sidenav-container class="content-container">
     <mat-sidenav class="sidebar-container"
@@ -14,7 +14,9 @@
       <app-sidebar></app-sidebar>
     </mat-sidenav>
     <mat-sidenav-content>
-      <app-products></app-products>
+      <section class="products-container">
+        <app-products></app-products>
+      </section>
     </mat-sidenav-content>
   </mat-sidenav-container>
-</div>
+</section>
