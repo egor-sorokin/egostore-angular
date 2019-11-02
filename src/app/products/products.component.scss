@@ -1,4 +1,11 @@
 .tile {
+  box-shadow: none;
+  transition: box-shadow 0.4s cubic-bezier(0.25, 0.25, 0.25, 0.25);
+
+  &:hover {
+    box-shadow: 0 6px 20px 1px #e2e2e2;
+  }
+
   &__inner {
     box-sizing: border-box;
     align-self: flex-start;
@@ -20,7 +27,7 @@
 
   &__footer {
     position: absolute;
-    bottom: 15px;
+    bottom: 25px;
     right: 50%;
 
     transform: translateX(50%);
