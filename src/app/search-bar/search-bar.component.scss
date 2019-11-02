@@ -1,5 +1,9 @@
 .search {
   &__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
     margin: 0 auto;
 
     width: 100%;
@@ -10,6 +14,12 @@
 
 .form {
   &__field {
-    width: 100%;
+    width: 85%;
+  }
+
+  &__button {
+    height: 100%;
+    align-self: center;
+    margin-bottom: 10px;
   }
 }
