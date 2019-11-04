@@ -1,6 +1,6 @@
 <section class="page-container">
   <section class="search-container">
-    <app-search-bar></app-search-bar>
+    <app-search-bar (search)="search($event)"></app-search-bar>
   </section>
 
   <mat-sidenav-container class="content-container">
@@ -15,7 +15,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <section class="products-container">
-        <app-products></app-products>
+        <app-products [products]="products"></app-products>
       </section>
     </mat-sidenav-content>
   </mat-sidenav-container>
