@@ -15,7 +15,6 @@ export class SearchBarComponent implements OnInit {
   }
 
   public onSearch(value: string): void {
-    console.log('string', value);
     this.setFilter.emit({ type: 'search', value: value ? value : '' });
   }
 }

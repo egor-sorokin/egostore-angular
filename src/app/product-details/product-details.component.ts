@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CartService } from '../../common/services/cart.service';
 
+import { CartService } from '../../common/services/cart.service';
 import { ProductsService } from '../../common/services/products.service';
+import { IProduct } from '../../common/types/app';
 
 @Component({
   selector: 'app-product-details',
@@ -27,7 +28,7 @@ export class ProductDetailsComponent implements OnInit {
       });
   }
 
-  addToCart(item) {
+  public addToCart(item: IProduct): void {
     window.alert('Your product has been added to the cart!');
     this.cartService.addToCart(item);
   }
