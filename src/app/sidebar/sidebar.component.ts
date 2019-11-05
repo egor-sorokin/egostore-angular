@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 import { IKeyToValue } from '../../common/types/generic';
 
@@ -10,6 +10,8 @@ import { IKeyToValue } from '../../common/types/generic';
 })
 
 export class SidebarComponent implements OnInit {
+  @Output() setFilter: EventEmitter<IKeyToValue<number | string>> = new EventEmitter();
+
   private prices: IKeyToValue<number | string>[] = [
     {
       label: '100',
@@ -42,17 +44,15 @@ export class SidebarComponent implements OnInit {
 
   constructor() { }
 
-  public ngOnInit(): void {
+  ngOnInit() {
   }
 
-
-  public filterByPrice(value: number): void {
-    console.log('filterByPrice:::', value);
+  public setFilterByPrice(value: number): void {
+    this.setFilter.emit({ type: 'price', value: value ? value : 0 });
   }
 
-
-  public filterByCategory(value: string): void {
-    console.log('filterByCategory:::', value);
+  public setFilterByCategory(value: number): void {
+    this.setFilter.emit({ type: 'category', value: value ? value : '' });
   }
 
   public getPrices() {
