@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {IKeyToValue} from '../../common/types/generic';
 
 @Component({
   selector: 'app-search-bar',
@@ -6,14 +7,15 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
-  @Output() search: EventEmitter<string> = new EventEmitter();
+  @Output() setFilter: EventEmitter<IKeyToValue<number | string>> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSearch(value: string): void {
-    this.search.emit(value);
+  public onSearch(value: string): void {
+    console.log('string', value);
+    this.setFilter.emit({ type: 'search', value: value ? value : '' });
   }
 }

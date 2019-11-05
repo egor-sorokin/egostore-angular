@@ -5,6 +5,7 @@
       matInput
       #searchInput
       placeholder="Search..."
+      (blur)="searchInput.value === '' && onSearch(searchInput.value)"
     >
     <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
