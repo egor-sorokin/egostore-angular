@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { CartService } from '../../common/services/cart.service';
-import {IProduct} from '../../common/types/app';
+import { IProduct } from '../../common/types/app';
+import { IKeyToValue } from '../../common/types/generic';
 
 @Component({
   selector: 'app-products',
@@ -9,6 +11,7 @@ import {IProduct} from '../../common/types/app';
 })
 export class ProductsComponent implements OnInit {
   @Input() products: IProduct[];
+  @Input() filters: IKeyToValue<number | string>;
 
   constructor(
     private cartService: CartService

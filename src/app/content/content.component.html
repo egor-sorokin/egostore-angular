@@ -11,11 +11,14 @@
                  [fixedTopGap]="options.top"
                  [fixedBottomGap]="options.bottom"
     >
-      <app-sidebar></app-sidebar>
+      <app-sidebar (setFilter)="setFilter($event)"></app-sidebar>
     </mat-sidenav>
     <mat-sidenav-content>
       <section class="products-container">
-        <app-products [products]="products"></app-products>
+        <app-products
+          [products]="products"
+          [filters]="filters"
+        ></app-products>
       </section>
     </mat-sidenav-content>
   </mat-sidenav-container>

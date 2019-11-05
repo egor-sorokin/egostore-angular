@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ProductsService } from '../../common/services/products.service';
-import {IProduct} from '../../common/types/app';
+import { IProduct } from '../../common/types/app';
 
 
 @Component({
@@ -16,6 +17,10 @@ export class ContentComponent implements OnInit {
   };
   products: IProduct[];
   allProducts: IProduct[];
+  filters = {
+    price: 0,
+    category: ''
+  };
 
   constructor(
     private productService: ProductsService
@@ -32,5 +37,9 @@ export class ContentComponent implements OnInit {
 
   search(value: string): void {
     this.products = this.allProducts.filter(({ title }: IProduct ) => title.toLowerCase().includes(value.trim().toLowerCase()));
+  }
+
+  setFilter({ type, value }): void {
+    this.filters[type] = value;
   }
 }

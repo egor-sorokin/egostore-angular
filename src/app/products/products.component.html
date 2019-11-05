@@ -4,7 +4,7 @@
   gutterSize="10px"
 >
   <mat-grid-tile
-    *ngFor="let product of products; index as productId"
+    *ngFor="let product of (products | priceFilter: filters.price | categoryFilter: filters.category); index as productId"
     class="tile"
   >
     <article class="tile__inner">
