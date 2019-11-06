@@ -1,0 +1,25 @@
+<section class="page-container">
+  <section class="search-container">
+    <app-search-bar (setFilter)="setFilter($event)"></app-search-bar>
+  </section>
+
+  <mat-sidenav-container class="content-container">
+    <mat-sidenav class="sidebar-container"
+                 mode="side"
+                 opened
+                 [fixedInViewport]="options.fixed"
+                 [fixedTopGap]="options.top"
+                 [fixedBottomGap]="options.bottom"
+    >
+      <app-sidebar (setFilter)="setFilter($event)"></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <section class="products-container">
+        <app-products
+          [products]="products"
+          [filters]="filters"
+        ></app-products>
+      </section>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</section>

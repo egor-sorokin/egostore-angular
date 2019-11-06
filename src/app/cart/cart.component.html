@@ -1,0 +1,152 @@
+<div class="cart-container">
+  <h2>Your cart</h2>
+
+  <div
+    *ngIf="items.length"
+    class="cart"
+  >
+    <mat-list class="cart__order order">
+      <mat-list-item *ngFor="let item of items">
+        <div
+          class="order__image"
+          matListAvatar
+          [ngStyle]="{'background-image': 'url(' + item.src + ')'}"
+        ></div>
+        <h4 matLine>{{ item.title }}</h4>
+        <p matLine>{{ item.description }}</p>
+        <p class="order__price">{{ item.price | currency }}</p>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+
+    <div class="cart__delete-order delete-order">
+      <button
+        class="delete-order__button"
+        mat-raised-button
+        color="warn"
+        (click)="cleanCart()"
+      >Delete all items</button>
+    </div>
+
+    <form
+      [formGroup]="checkoutForm"
+      class="cart__details details"
+    >
+      <mat-vertical-stepper linear="true" #stepper>
+        <mat-step [stepControl]="checkoutForm.get('shipping')">
+          <ng-template matStepLabel>Select a shipping method</ng-template>
+            <mat-radio-group
+              aria-label="Select a shipping option"
+              class="details__shipping shipping"
+              formControlName="shipping"
+              required
+            >
+              <mat-radio-button
+                class="shipping__option"
+                *ngFor="let shipping of shippingPrices"
+                [value]="shipping.price"
+              >
+                {{shipping.type}} <em>({{shipping.price | currency}})</em>
+              </mat-radio-button>
+            </mat-radio-group>
+          <footer>
+            <button
+              mat-button
+              matStepperNext
+              type="button"
+            >Next</button>
+          </footer>
+        </mat-step>
+
+        <mat-step [stepControl]="checkoutForm.get('name')">
+          <ng-template matStepLabel>Fill out your name</ng-template>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Last name, First name"
+              formControlName="name"
+              required
+            >
+          </mat-form-field>
+          <footer>
+            <button
+              mat-button
+              matStepperPrevious
+              type="button"
+            >Back</button>
+            <button
+              mat-button
+              matStepperNext
+              type="button"
+            >Next</button>
+          </footer>
+        </mat-step>
+
+        <mat-step [stepControl]="checkoutForm.get('address')">
+          <ng-template matStepLabel>Fill out your address</ng-template>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Address"
+              formControlName="address"
+              required
+            >
+          </mat-form-field>
+          <footer>
+            <button
+              mat-button
+              matStepperPrevious
+              type="button"
+            >Back</button>
+            <button
+              mat-button
+              matStepperNext
+              type="button"
+            >Next</button>
+          </footer>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Order summary</ng-template>
+          <div class="details__summary summary">
+            <h3>Please check your data</h3>
+            <div><b>Name:</b> {{checkoutForm.value.name}}</div>
+            <div><b>Address:</b> {{checkoutForm.value.address}}</div>
+
+            <p class="summary__total"><b>Total price:</b> {{getTotal() | currency}}</p>
+
+            <footer class="summary__actions">
+              <button
+                mat-button
+                matStepperPrevious
+                type="button"
+              >Back</button>
+              <button
+                mat-raised-button
+                color="warn"
+                (click)="stepper.reset()"
+              >Clear form</button>
+              <button
+                mat-raised-button
+                color="primary"
+                (click)="proceed()"
+              >Proceed</button>
+            </footer>
+          </div>
+        </mat-step>
+      </mat-vertical-stepper>
+    </form>
+  </div>
+
+  <div
+    *ngIf="!items.length"
+    class="cart cart--empty"
+  >
+    <p>You have not added something to your cart yet.</p>
+    <button
+      [routerLink]="['/']"
+      mat-raised-button
+      color="primary"
+    >Back to the store</button>
+  </div>
+</div>

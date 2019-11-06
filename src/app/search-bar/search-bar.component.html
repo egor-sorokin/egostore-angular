@@ -1,1 +1,18 @@
-<p>search-bar works!</p>
+<form class="search__form form">
+  <mat-form-field class="form__field">
+    <input
+      type="text"
+      matInput
+      #searchInput
+      placeholder="Search..."
+      (blur)="searchInput.value === '' && onSearch(searchInput.value)"
+    >
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <button
+    class="form__button"
+    mat-raised-button
+    color="primary"
+    (click)="onSearch(searchInput.value)"
+  >Search</button>
+</form>

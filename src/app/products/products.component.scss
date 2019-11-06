@@ -1,0 +1,39 @@
+.tile {
+  box-shadow: none;
+  transition: box-shadow 0.4s cubic-bezier(0.25, 0.25, 0.25, 0.25);
+
+  &:hover {
+    box-shadow: 0 6px 20px 1px #e2e2e2;
+  }
+
+  &__inner {
+    box-sizing: border-box;
+    align-self: flex-start;
+
+    height: 100%;
+
+    padding: 30px 30px 65px;
+  }
+
+  &__image {
+    height: 180px;
+    width: auto;
+
+    background-color: rgba(127, 255, 212, 0.6);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 25px;
+    right: 50%;
+
+    transform: translateX(50%);
+
+    button:nth-of-type(n+2) {
+      margin-left: 10px;
+    }
+  }
+}

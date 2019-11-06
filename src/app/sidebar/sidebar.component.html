@@ -1,1 +1,21 @@
-<p>sidebar works!</p>
+<aside>
+  <p>Filters</p>
+  <mat-form-field class="filter-field">
+    <mat-label>Choose price</mat-label>
+    <mat-select (selectionChange)="setFilterByPrice($event.value)">
+      <mat-option>View all</mat-option>
+      <mat-option *ngFor="let price of getPrices()" [value]="price.value">
+        {{price.label}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="filter-field">
+    <mat-label>Choose category</mat-label>
+    <mat-select (selectionChange)="setFilterByCategory($event.value)">
+      <mat-option>View all</mat-option>
+      <mat-option *ngFor="let category of getCategories()" [value]="category.value">
+        {{category.label}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</aside>

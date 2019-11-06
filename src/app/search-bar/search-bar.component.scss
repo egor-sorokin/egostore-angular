@@ -1,0 +1,25 @@
+.search {
+  &__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 0 auto;
+
+    width: 100%;
+    max-width: 650px;
+    min-width: 250px;
+  }
+}
+
+.form {
+  &__field {
+    width: 85%;
+  }
+
+  &__button {
+    height: 100%;
+    align-self: center;
+    margin-bottom: 10px;
+  }
+}
