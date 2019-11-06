@@ -16,10 +16,10 @@ export class ContentComponent implements OnInit {
     top: 184
   };
   products: IProduct[];
-  allProducts: IProduct[];
   filters = {
     price: 0,
-    category: ''
+    category: '',
+    search: ''
   };
 
   constructor(
@@ -28,18 +28,11 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
     this.productService.getProducts().subscribe((products: IProduct[]) => {
-      if (products) {
-        this.allProducts = products;
-        this.products = products;
-      }
+        this.products = products ? products : [];
     });
   }
 
-  search(value: string): void {
-    this.products = this.allProducts.filter(({ title }: IProduct ) => title.toLowerCase().includes(value.trim().toLowerCase()));
-  }
-
-  setFilter({ type, value }): void {
+  public setFilter({ type, value }): void {
     this.filters[type] = value;
   }
 }

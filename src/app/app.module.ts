@@ -17,6 +17,7 @@ import { ContentComponent } from './content/content.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { PriceFilterPipe } from '../common/filters/price-filter.pipe';
 import { CategoryFilterPipe } from '../common/filters/category-filter.pipe';
+import { SearchFilterPipe } from '../common/filters/search-filter.pipe';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CategoryFilterPipe } from '../common/filters/category-filter.pipe';
     ContentComponent,
     ProductDetailsComponent,
     PriceFilterPipe,
-    CategoryFilterPipe
+    CategoryFilterPipe,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,

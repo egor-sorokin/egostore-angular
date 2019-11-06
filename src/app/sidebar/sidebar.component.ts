@@ -55,11 +55,11 @@ export class SidebarComponent implements OnInit {
     this.setFilter.emit({ type: 'category', value: value ? value : '' });
   }
 
-  public getPrices() {
+  public getPrices(): IKeyToValue<number | string>[] {
     return this.prices;
   }
 
-  public getCategories() {
+  public getCategories(): IKeyToValue<string>[] {
     return this.categories;
   }
 }

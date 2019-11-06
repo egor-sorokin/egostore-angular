@@ -7,3 +7,8 @@ export interface IProduct {
   title: string;
   description?: string;
 }
+
+export interface IShipping {
+  type: string;
+  price: number;
+}

@@ -43,7 +43,7 @@
             >
               <mat-radio-button
                 class="shipping__option"
-                *ngFor="let shipping of shippingPrices | async"
+                *ngFor="let shipping of shippingPrices"
                 [value]="shipping.price"
               >
                 {{shipping.type}} <em>({{shipping.price | currency}})</em>
@@ -125,7 +125,7 @@
                 mat-raised-button
                 color="warn"
                 (click)="stepper.reset()"
-              >Clean form</button>
+              >Clear form</button>
               <button
                 mat-raised-button
                 color="primary"
