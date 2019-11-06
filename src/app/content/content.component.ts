@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProductsService } from '../../common/services/products.service';
-import { IProduct } from '../../common/types/app';
+import { IFilters, IProduct } from '../../common/types/app';
 
 
 @Component({
@@ -16,10 +16,10 @@ export class ContentComponent implements OnInit {
     top: 184
   };
   products: IProduct[];
-  filters = {
-    price: 0,
+  filters: IFilters = {
+    search: '',
     category: '',
-    search: ''
+    price: 0
   };
 
   constructor(

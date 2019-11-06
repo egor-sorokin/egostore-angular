@@ -12,3 +12,9 @@ export interface IShipping {
   type: string;
   price: number;
 }
+
+export interface IFilters {
+  search: string;
+  category: string;
+  price: number;
+}

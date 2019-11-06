@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { CartService } from '../../common/services/cart.service';
-import { IProduct } from '../../common/types/app';
-import { IKeyToValue } from '../../common/types/generic';
+import { IFilters, IProduct } from '../../common/types/app';
 
 @Component({
   selector: 'app-products',
@@ -11,7 +10,7 @@ import { IKeyToValue } from '../../common/types/generic';
 })
 export class ProductsComponent implements OnInit {
   @Input() products: IProduct[];
-  @Input() filters: IKeyToValue<number | string>;
+  @Input() filters: IFilters;
 
   constructor(
     private cartService: CartService
