@@ -3,13 +3,16 @@
     <app-search-bar (setFilter)="setFilter($event)"></app-search-bar>
   </section>
 
-  <mat-sidenav-container class="content-container">
-    <mat-sidenav class="sidebar-container"
-                 mode="side"
-                 opened
-                 [fixedInViewport]="options.fixed"
-                 [fixedTopGap]="options.top"
-                 [fixedBottomGap]="options.bottom"
+  <mat-sidenav-container
+    class="content-container"
+  >
+    <mat-sidenav
+      class="sidebar-container"
+      [opened]="!isMobile"
+      [mode]="isMobile ? 'over' : 'side'"
+      [fixedInViewport]="isMobile"
+      [fixedTopGap]="options.top"
+      [fixedBottomGap]="options.bottom"
     >
       <app-sidebar (setFilter)="setFilter($event)"></app-sidebar>
     </mat-sidenav>
