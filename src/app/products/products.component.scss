@@ -28,9 +28,10 @@
   &__footer {
     position: absolute;
     bottom: 25px;
-    right: 50%;
+    left: 0;
+    right: 0;
 
-    transform: translateX(50%);
+    text-align: center;
 
     button:nth-of-type(n+2) {
       margin-left: 10px;
@@ -45,6 +46,14 @@
 
     &:hover {
       box-shadow: 0 6px 20px 1px #e2e2e2;
+    }
+
+    &__inner {
+      padding: 20px 20px 75px
+    }
+
+    &__footer {
+      bottom: 20px;
     }
   }
 }
