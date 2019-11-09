@@ -6,6 +6,7 @@ import {
   OnInit,
   Output
 } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 import { IKeyToValue } from '../../common/types/generic';
 
@@ -19,7 +20,7 @@ import { IKeyToValue } from '../../common/types/generic';
 export class SidebarComponent implements OnInit {
   @Output() setFilter: EventEmitter<IKeyToValue<number | string>> = new EventEmitter();
   @Input() isMobile: boolean;
-  @Input() sidebar: ElementRef;
+  @Input() sidebar: MatSidenav;
 
   private prices: IKeyToValue<number | string>[] = [
     {
