@@ -1,3 +1,15 @@
 .filter-field {
   width: 100%;
 }
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar__header {
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}

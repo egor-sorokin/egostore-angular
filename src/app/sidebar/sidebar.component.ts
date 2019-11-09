@@ -1,4 +1,11 @@
-import { Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output
+} from '@angular/core';
 
 import { IKeyToValue } from '../../common/types/generic';
 
@@ -11,6 +18,8 @@ import { IKeyToValue } from '../../common/types/generic';
 
 export class SidebarComponent implements OnInit {
   @Output() setFilter: EventEmitter<IKeyToValue<number | string>> = new EventEmitter();
+  @Input() isMobile: boolean;
+  @Input() sidebar: ElementRef;
 
   private prices: IKeyToValue<number | string>[] = [
     {

@@ -40,12 +40,12 @@
   margin-top: 140px;
 }
 
-.row {
+.flex-row {
   display: flex;
   flex-direction: row;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 740px) {
   .product {
     &__image {
       margin: 0 auto;
@@ -64,7 +64,7 @@
     }
   }
 
-  .row {
+  .flex-row {
     flex-direction: column;
   }
 
