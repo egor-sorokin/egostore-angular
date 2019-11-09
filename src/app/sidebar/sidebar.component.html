@@ -1,5 +1,15 @@
 <aside>
-  <p>Filters</p>
+  <header class="flex-row sidebar__header">
+    <p>Filters</p>
+    <span class="flex-spacer"></span>
+    <button
+      *ngIf="isMobile"
+      mat-icon-button
+      (click)="sidebar.close()"
+    >
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+  </header>
   <mat-form-field class="filter-field">
     <mat-label>Choose price</mat-label>
     <mat-select (selectionChange)="setFilterByPrice($event.value)">

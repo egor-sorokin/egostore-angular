@@ -40,7 +40,7 @@
   margin-top: 140px;
 }
 
-.row {
+.flex-row {
   display: flex;
   flex-direction: row;
 }
@@ -64,7 +64,7 @@
     }
   }
 
-  .row {
+  .flex-row {
     flex-direction: column;
   }
 

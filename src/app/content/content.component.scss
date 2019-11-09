@@ -33,3 +33,9 @@
 
   padding: 30px;
 }
+
+.filters-button {
+  position: fixed;
+  z-index: 9999999;
+  left: -8px;
+}
