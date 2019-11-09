@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
-import { ProductsService } from '../../common/services/products.service';
+import { ProductsService} from '../../common/services/products.service';
 import { IFilters, IProduct } from '../../common/types/app';
+import { mediaQuery } from '../../common/constants';
 
 
 @Component({
@@ -23,12 +25,17 @@ export class ContentComponent implements OnInit {
   };
 
   constructor(
-    private productService: ProductsService
+    private productService: ProductsService,
+    private breakpointObserver: BreakpointObserver
   ) {}
+
+  get isMobile(): boolean {
+    return this.breakpointObserver.isMatched(mediaQuery.mobile);
+  }
 
   ngOnInit() {
     this.productService.getProducts().subscribe((products: IProduct[]) => {
-        this.products = products ? products : [];
+      this.products = products ? products : [];
     });
   }
 

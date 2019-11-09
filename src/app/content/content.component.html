@@ -3,18 +3,35 @@
     <app-search-bar (setFilter)="setFilter($event)"></app-search-bar>
   </section>
 
-  <mat-sidenav-container class="content-container">
-    <mat-sidenav class="sidebar-container"
-                 mode="side"
-                 opened
-                 [fixedInViewport]="options.fixed"
-                 [fixedTopGap]="options.top"
-                 [fixedBottomGap]="options.bottom"
+  <mat-sidenav-container
+    class="content-container"
+  >
+    <mat-sidenav
+      #sidebar
+      class="sidebar-container"
+      [opened]="!isMobile"
+      [mode]="isMobile ? 'over' : 'side'"
+      [fixedInViewport]="isMobile"
+      [fixedTopGap]="options.top"
+      [fixedBottomGap]="options.bottom"
     >
-      <app-sidebar (setFilter)="setFilter($event)"></app-sidebar>
+      <app-sidebar
+        [sidebar]="sidebar"
+        [isMobile]="isMobile"
+        (setFilter)="setFilter($event)"
+      ></app-sidebar>
     </mat-sidenav>
     <mat-sidenav-content>
       <section class="products-container">
+        <button
+          *ngIf="isMobile"
+          mat-raised-button
+          color="primary"
+          class="filters-button"
+          (click)="sidebar.toggle()"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
         <app-products
           [products]="products"
           [filters]="filters"

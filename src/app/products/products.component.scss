@@ -37,3 +37,14 @@
     }
   }
 }
+
+@media only screen and (max-width: 740px) {
+  .tile {
+    box-shadow: 0 6px 20px 1px #e2e2e2;
+    transition: none;
+
+    &:hover {
+      box-shadow: 0 6px 20px 1px #e2e2e2;
+    }
+  }
+}
